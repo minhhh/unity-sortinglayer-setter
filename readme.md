@@ -10,7 +10,5 @@ You can simply add the `SortingLayerSetter` and it will show `Layer Name` and `O
 
 ![example 1](/images/example1.png)
 
-The code for drawing popup attribute was taken from [https://github.com/anchan828/property-drawer-collection/tree/master/Popup](https://github.com/anchan828/property-drawer-collection/tree/master/Popup) with some modifications.
-
 ## License
 MIT © Minh Ha
