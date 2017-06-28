@@ -1,6 +1,6 @@
 {
   "name": "unity-sortinglayer-setter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This component provides a way to set the sorting layer of any object using code or from the Editor.",
   "main": "index.js",
   "files": [

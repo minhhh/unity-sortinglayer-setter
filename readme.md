@@ -12,3 +12,16 @@ You can simply add the `SortingLayerSetter` and it will show `Layer Name` and `O
 
 ## License
 MIT © Minh Ha
+
+## Changelog
+
+**0.0.2**
+
+* Add `waitForRenderer`
+
+**0.0.1**
+
+* Initial commit
+
+<br/>
+

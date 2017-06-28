@@ -7,6 +7,9 @@ public class SortingLayerSetter : MonoBehaviour
     [SerializeField, Range (-10000, 10000)] private int _orderInLayer = 0;
     public bool recursive = false;
 
+    // wait for renderer to be created
+    public bool waitForRenderer = false;
+
     protected virtual void Awake ()
     {
         Renderer renderer = transform.GetComponent <Renderer> ();
@@ -14,6 +17,19 @@ public class SortingLayerSetter : MonoBehaviour
             _layerName = renderer.sortingLayerName;
         }
         _SetLayer (LayerName, OrderInLayer);
+
+        if (waitForRenderer) {
+            StartCoroutine (WaitForRenderer ());
+        }
+    }
+
+    IEnumerator WaitForRenderer ()
+    {
+        while (GetComponent <Renderer> () == null) {
+            yield return null;
+        }
+        _SetLayer (LayerName, OrderInLayer);
+        yield return null;
     }
 
     protected virtual void OnValidate ()
