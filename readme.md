@@ -15,6 +15,10 @@ MIT © Minh Ha
 
 ## Changelog
 
+**0.0.3**
+
+* Update `waitForRenderer` to use `Update` function instead of coroutine
+
 **0.0.2**
 
 * Add `waitForRenderer`

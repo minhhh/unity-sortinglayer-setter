@@ -17,19 +17,17 @@ public class SortingLayerSetter : MonoBehaviour
             _layerName = renderer.sortingLayerName;
         }
         _SetLayer (LayerName, OrderInLayer);
-
-        if (waitForRenderer) {
-            StartCoroutine (WaitForRenderer ());
-        }
     }
 
-    IEnumerator WaitForRenderer ()
+    void Update ()
     {
-        while (GetComponent <Renderer> () == null) {
-            yield return null;
+        if (waitForRenderer) {
+            var renderer = GetComponent <Renderer> ();
+            if (renderer != null) {
+                _SetLayer (LayerName, OrderInLayer);
+                this.enabled = false;
+            }
         }
-        _SetLayer (LayerName, OrderInLayer);
-        yield return null;
     }
 
     protected virtual void OnValidate ()
